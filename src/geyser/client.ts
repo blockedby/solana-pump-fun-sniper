@@ -38,6 +38,7 @@ export class GeyserClient {
       });
 
       this.client = new Client(this.config.grpcEndpoint, undefined, undefined);
+      await this.client.connect();
 
       const request: SubscribeRequest = {
         accounts: {},

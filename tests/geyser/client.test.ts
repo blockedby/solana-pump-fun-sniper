@@ -58,6 +58,7 @@ describe('GeyserClient', () => {
 
     // Create mock client
     mockClient = {
+      connect: vi.fn().mockResolvedValue(undefined),
       subscribe: vi.fn().mockResolvedValue(mockStream),
       close: vi.fn(),
     };
@@ -91,6 +92,13 @@ describe('GeyserClient', () => {
         undefined,
         undefined
       );
+    });
+
+    it('should call connect() on client before subscribe', async () => {
+      const geyser = new GeyserClient(testConfig, testCallback);
+      await geyser.connect();
+
+      expect(mockClient.connect).toHaveBeenCalled();
     });
 
     it('should subscribe to stream', async () => {
