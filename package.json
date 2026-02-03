@@ -9,7 +9,8 @@
     "start:prod": "node dist/index.js",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "generate-wallet": "tsx scripts/generate-test-wallet.ts"
   },
   "keywords": [
     "solana",

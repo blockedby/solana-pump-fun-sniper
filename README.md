@@ -59,6 +59,20 @@ By default, the sniper runs in **dry-run mode** (`DRY_RUN=true`). In this mode:
 - No real SOL is spent
 - You can safely test symbol matching and transaction building
 
+### Testing Without a Real Wallet
+
+Don't have a Solana wallet? Generate a test keypair:
+
+```bash
+npm run generate-wallet
+```
+
+This creates a random keypair for testing. Copy the `PRIVATE_KEY=...` line to your `.env` file.
+
+**Note:** This wallet has no SOL, but that's fine for dry-run mode!
+
+### Running in Dry Run Mode
+
 ```bash
 # Dry run is enabled by default - just run:
 npm start
