@@ -42,7 +42,8 @@ describe('GeyserClient', () => {
 
   const testConfig = {
     grpcEndpoint: 'http://test.grpc:10000',
-  } as Pick<Config, 'grpcEndpoint'>;
+    grpcToken: undefined,
+  } as Pick<Config, 'grpcEndpoint' | 'grpcToken'>;
 
   const testCallback: TokenCallback = vi.fn();
 

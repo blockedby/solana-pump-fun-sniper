@@ -13,7 +13,7 @@ export type TokenCallback = (token: TokenInfo) => void;
 
 export class GeyserClient {
   private client: Client | null = null;
-  private config: Pick<Config, 'grpcEndpoint'>;
+  private config: Pick<Config, 'grpcEndpoint' | 'grpcToken'>;
   private onToken: TokenCallback;
   private lastSlot: number = 0;
   private reconnectAttempts: number = 0;
@@ -21,7 +21,7 @@ export class GeyserClient {
   private isRunning: boolean = false;
   private keepaliveInterval: NodeJS.Timeout | null = null;
 
-  constructor(config: Pick<Config, 'grpcEndpoint'>, onToken: TokenCallback) {
+  constructor(config: Pick<Config, 'grpcEndpoint' | 'grpcToken'>, onToken: TokenCallback) {
     this.config = config;
     this.onToken = onToken;
   }
@@ -37,7 +37,7 @@ export class GeyserClient {
         endpoint: this.config.grpcEndpoint,
       });
 
-      this.client = new Client(this.config.grpcEndpoint, undefined, undefined);
+      this.client = new Client(this.config.grpcEndpoint, this.config.grpcToken, undefined);
       await this.client.connect();
 
       const request: SubscribeRequest = {

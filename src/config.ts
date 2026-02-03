@@ -19,6 +19,7 @@ function parsePositiveNumber(value: string, name: string): number {
 
 export interface Config {
   grpcEndpoint: string;
+  grpcToken: string | undefined;
   rpcEndpoint: string;
   wallet: Keypair;
   symbol: string;
@@ -86,6 +87,7 @@ export function loadConfig(): Config {
 
   return {
     grpcEndpoint,
+    grpcToken: process.env.GRPC_TOKEN || undefined,
     rpcEndpoint,
     wallet,
     symbol,
