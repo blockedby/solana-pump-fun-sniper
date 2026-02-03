@@ -8,6 +8,15 @@ import { buildBuyTransaction } from './trading/builder';
 import { sendTransaction } from './trading/sender';
 import { calculateBuyAmount } from './utils/wallet';
 
+// Handle uncaught errors
+process.on('uncaughtException', (error) => {
+  logger.error('Uncaught exception', { error: String(error) });
+});
+
+process.on('unhandledRejection', (reason) => {
+  logger.error('Unhandled rejection', { reason: String(reason) });
+});
+
 async function handleNewToken(token: TokenInfo, config: Config): Promise<void> {
   // Check symbol match
   if (!matchSymbol(token, config)) {

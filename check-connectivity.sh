@@ -11,6 +11,21 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
+# kcnc@ryzen-pc:~/code/block-assessment/solana-pump-fun-sniper$ ./check-connectivity.sh 
+# ======================================
+#   Solana Geyser Connectivity Check
+# ======================================
+
+# Your IP: 83.139.166.32
+
+# [RPC] http+tls://ams.node.vali.wtf/ ... FAIL (HTTP 000)
+# [RPC] getSlot test ... FAIL
+#   Response: 
+# [LANDING] http://fast.ams.node.vali.wtf/ ... WARN (HTTP 403)
+# [gRPC] ams.grpc.vali.wtf:10000 TCP ... OK (port open)
+# [gRPC] HTTP endpoint ... HTTP 000 (gRPC uses HTTP/2, full test needs grpcurl)
+# [WS] ams.socket.vali.wtf:80 TCP ... OK (port open)
+
 # Endpoints
 RPC_URL="http://ams.node.vali.wtf/"
 WS_URL="ws://ams.socket.vali.wtf/"

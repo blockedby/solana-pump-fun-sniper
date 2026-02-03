@@ -67,13 +67,18 @@ export class GeyserClient {
         this.handleUpdate(update);
       });
 
-      stream.on('error', (error: Error) => {
-        logger.error('Geyser stream error', { error: error.message });
+      stream.on('error', (error: Error & { code?: string }) => {
+        logger.error('Geyser stream error', { error: error.message, code: error.code });
         this.handleDisconnect();
       });
 
       stream.on('end', () => {
         logger.warn('Geyser stream ended');
+        this.handleDisconnect();
+      });
+
+      stream.on('close', () => {
+        logger.warn('Geyser stream closed');
         this.handleDisconnect();
       });
 
