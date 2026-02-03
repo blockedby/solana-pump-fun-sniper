@@ -50,6 +50,29 @@ npm test
 npm run test:coverage
 ```
 
+## Dry Run Mode (Safe Testing)
+
+By default, the sniper runs in **dry-run mode** (`DRY_RUN=true`). In this mode:
+
+- Transactions are **built but not sent** to the network
+- Transactions are **simulated** to verify they would succeed
+- No real SOL is spent
+- You can safely test symbol matching and transaction building
+
+```bash
+# Dry run is enabled by default - just run:
+npm start
+```
+
+To enable **live trading** (real transactions), explicitly set:
+
+```bash
+# In .env file:
+DRY_RUN=false
+```
+
+**Warning:** With `DRY_RUN=false`, real transactions will be sent and SOL will be spent.
+
 ## Configuration
 
 | Variable | Required | Default | Description |
