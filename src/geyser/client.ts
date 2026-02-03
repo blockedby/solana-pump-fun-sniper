@@ -211,10 +211,9 @@ export class GeyserClient {
       clearInterval(this.keepaliveInterval);
       this.keepaliveInterval = null;
     }
-    if (this.client) {
-      this.client.close();
-      this.client = null;
-    }
+    // Note: yellowstone-grpc Client doesn't expose a close method
+    // Setting to null allows garbage collection to clean up the connection
+    this.client = null;
     logger.info('Disconnected from Geyser');
   }
 

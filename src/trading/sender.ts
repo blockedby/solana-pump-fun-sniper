@@ -31,13 +31,16 @@ async function sendViaJito(
     }),
   });
 
-  const result = await response.json();
+  const result = (await response.json()) as {
+    error?: { message: string };
+    result?: string;
+  };
 
   if (result.error) {
     throw new Error(`Jito error: ${result.error.message}`);
   }
 
-  return result.result;
+  return result.result as string;
 }
 
 async function sendViaRpc(
