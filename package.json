@@ -1,11 +1,8 @@
 {
   "name": "solana-pump-fun-sniper",
   "version": "1.0.0",
-  "description": "Сделай сервис, который:",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "description": "Real-time token sniper for Pump.fun using Solana Geyser gRPC streaming",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "start": "tsx src/index.ts",
@@ -14,9 +11,8 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["solana", "pump.fun", "sniper", "geyser", "grpc"],
+  "license": "MIT",
   "dependencies": {
     "@solana/spl-token": "^0.4.14",
     "@solana/web3.js": "^1.98.4",
