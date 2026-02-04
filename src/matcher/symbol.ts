@@ -14,17 +14,15 @@ export function matchSymbol(
   config: Pick<Config, 'symbol' | 'matchMode'>
 ): boolean {
   const { symbol: pattern, matchMode } = config;
-  const { symbol: tokenSymbol, name: tokenName } = token;
+  const { symbol: tokenSymbol } = token;
 
-  let symbolMatch = false;
-  let nameMatch = false;
+  let isMatch = false;
   let reason: string;
 
   if (matchMode === 'regex') {
     try {
       const regex = new RegExp(pattern, 'i');
-      symbolMatch = regex.test(tokenSymbol);
-      nameMatch = regex.test(tokenName);
+      isMatch = regex.test(tokenSymbol);
       reason = `regex /${pattern}/i`;
     } catch (e) {
       logger.error('Invalid regex pattern', { pattern, error: String(e) });
@@ -32,18 +30,13 @@ export function matchSymbol(
     }
   } else {
     // Exact match (case-insensitive)
-    const lowerPattern = pattern.toLowerCase();
-    symbolMatch = tokenSymbol.toLowerCase() === lowerPattern;
-    nameMatch = tokenName.toLowerCase() === lowerPattern;
+    isMatch = tokenSymbol.toLowerCase() === pattern.toLowerCase();
     reason = 'exact match (case-insensitive)';
   }
 
-  const isMatch = symbolMatch || nameMatch;
-  const matchedOn = symbolMatch && nameMatch ? 'symbol+name' : symbolMatch ? 'symbol' : nameMatch ? 'name' : 'none';
-
-  logger.info(`Match check: "${tokenSymbol}" / "${tokenName}" ${isMatch ? '✓' : '✗'} ${pattern}`, {
+  logger.info(`Symbol check: "${tokenSymbol}" ${isMatch ? '✓' : '✗'} ${pattern}`, {
     mode: matchMode,
-    matchedOn,
+    reason,
     match: isMatch,
   });
 

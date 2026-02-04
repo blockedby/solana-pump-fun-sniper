@@ -27,6 +27,7 @@ cp .env.example .env
 ```
 
 Required:
+
 - `GRPC_ENDPOINT` - Yellowstone gRPC endpoint
 - `RPC_ENDPOINT` - Solana RPC endpoint
 - `PRIVATE_KEY` - Your wallet private key (base58)
@@ -94,7 +95,7 @@ DRY_RUN=false
 | `GRPC_ENDPOINT` | Yes | - | Yellowstone gRPC URL |
 | `RPC_ENDPOINT` | Yes | - | Solana JSON-RPC URL |
 | `PRIVATE_KEY` | Yes | - | Wallet private key (base58) |
-| `SYMBOL` | Yes | - | Pattern to match (checks symbol AND name) |
+| `SYMBOL` | Yes | - | Target token symbol (or regex pattern) |
 | `MATCH_MODE` | No | `exact` | `exact` or `regex` (case-insensitive) |
 | `BUY_AMOUNT_SOL` | No | `0.1` | SOL amount to spend |
 | `SLIPPAGE_BPS` | No | `500` | Slippage tolerance (basis points) |
@@ -107,43 +108,50 @@ DRY_RUN=false
 
 ### Symbol Matching Examples
 
-Pattern matches against **both symbol AND name** (case-insensitive). If either matches, the token is selected.
-
 **Exact match** (default):
+
 ```env
 SYMBOL=PEPE
 MATCH_MODE=exact
 ```
-Matches tokens where symbol OR name equals `PEPE`.
 
-**Regex match** - multiple keywords:
+Matches only `PEPE` (case-insensitive).
+
+**Regex match** - multiple symbols:
+
 ```env
 SYMBOL=trump|molt|epstein
 MATCH_MODE=regex
 ```
-Matches any token containing `trump`, `molt`, or `epstein` in symbol or name.
-Example: Symbol `EPFILE` with name `Epstein File` → matches on name.
+
+Matches `TRUMP`, `MOLT`, `EPSTEIN`, `TrumpX`, `MOLTPET`, etc.
 
 **Regex match** - starts with:
+
 ```env
 SYMBOL=^pepe
 MATCH_MODE=regex
 ```
-Matches symbol/name starting with `pepe`: `PEPE`, `PEPE2`, `PepeKing`.
+
+Matches symbols starting with `pepe`: `PEPE`, `PEPE2`, `PepeKing`.
 
 **Regex match** - ends with:
+
 ```env
 SYMBOL=trump$
 MATCH_MODE=regex
 ```
-Matches symbol/name ending with `trump`: `TRUMP`, `BABYTRUMP`.
+
+Matches symbols ending with `trump`: `TRUMP`, `BABYTRUMP`.
 
 **Regex match** - contains:
+
 ```env
 SYMBOL=doge
 MATCH_MODE=regex
 ```
-Matches any token containing `doge`: `DOGE`, `BABYDOGE`, `DogeKing`.
+
+Matches any symbol containing `doge`: `DOGE`, `BABYDOGE`, `DogeKing`.
 
 ## Architecture
 
