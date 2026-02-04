@@ -207,3 +207,51 @@
 2026-02-04T15:45:28.507Z [0m[INFO][0m  [0mMatch check: "TEST" / "test coin" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
 2026-02-04T15:45:35.357Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"AMX27cTEgEVt8e6uXnKKu92HZQjbKJEuMRDjEGpg38jr","symbol":"9A9C","name":"Grok Growing","slot":398031336}
 2026-02-04T15:45:35.357Z [0m[INFO][0m  [0mMatch check: "9A9C" / "Grok Growing" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:45:37.204Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"AbZyLscr9dL698pDLrRsiMH2qPxprpXHsJzznw9pump","symbol":"FIRST","name":"COLLATERIZE FOUNDER POSTED IT","slot":398031339}
+2026-02-04T15:45:37.205Z [0m[INFO][0m  [0mMatch check: "FIRST" / "COLLATERIZE FOUNDER POSTED IT" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:45:37.205Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"4QcEsH6W3wpWm4AVZcxTdYhQgGVPxnX9hZxWqU7Epump","symbol":"FIRST","name":"COLLATERIZE FOUNDER POSTED IT","slot":398031339}
+2026-02-04T15:45:37.205Z [0m[INFO][0m  [0mMatch check: "FIRST" / "COLLATERIZE FOUNDER POSTED IT" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:45:37.673Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"4mdghgPo4E4JErsR8Pk7q9VtVW66hw3hdinkSAbJpump","symbol":"FIRST","name":"COLLATERIZE FOUNDER POSTED IT","slot":398031339}
+2026-02-04T15:45:37.673Z [0m[INFO][0m  [0mMatch check: "FIRST" / "COLLATERIZE FOUNDER POSTED IT" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:45:42.088Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"So11111111111111111111111111111111111111112","symbol":"UNKNOWN","name":"Unknown Token","slot":398031345}
+2026-02-04T15:45:42.088Z [0m[INFO][0m  [0mMatch check: "UNKNOWN" / "Unknown Token" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:45:42.464Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"AK2Wte52kCH9keLuZfRevqG5ArciQp7vxUSDYZXMpump","symbol":"🧾","name":"🧾","slot":398031345}
+2026-02-04T15:45:42.464Z [0m[INFO][0m  [0mMatch check: "🧾" / "🧾" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:45:46.157Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"GUH494jaV21EPB5QscXEoHJVdJY6oLuDxK3A1V7spump","symbol":"CYCLES","name":"1st cycle 2nd cycle 3rd cycle","slot":398031349}
+2026-02-04T15:45:46.157Z [0m[INFO][0m  [0mMatch check: "CYCLES" / "1st cycle 2nd cycle 3rd cycle" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:45:46.289Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"Cg173pP7xGEPSBqV44v8Q7nTnCq3kKQxgpscAJ93pump","symbol":"bfc","name":"bullshit fantasy coin","slot":398031350}
+2026-02-04T15:45:46.289Z [0m[INFO][0m  [0mMatch check: "bfc" / "bullshit fantasy coin" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:45:47.451Z [33m[WARN][0m  [33mNo token balances in transaction[0m {"sig":"iRlzzcy02Obc0DM8fMCSuCIz+IJSV/bVQhn2j87859yQ0fWj8iaAJZ6ROgnSbi8+HyrSH3dGxILwaAGAZ1oAAw=="}
+2026-02-04T15:45:49.551Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"CFxxLnSKuUceddx1wveCn1cWDd6rLdLunG6cUg9vZxzi","symbol":"d██g","name":"d██g","slot":398031354}
+2026-02-04T15:45:49.551Z [0m[INFO][0m  [0mMatch check: "d██g" / "d██g" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:45:51.352Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"So11111111111111111111111111111111111111112","symbol":"UNKNOWN","name":"Unknown Token","slot":398031356}
+2026-02-04T15:45:51.352Z [0m[INFO][0m  [0mMatch check: "UNKNOWN" / "Unknown Token" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:45:56.805Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"DBox4JKe5hst7zcc93VedZKsZnK8FpAvhFoQ2xRy8hXC","symbol":"NEON","name":"Neon Porsche","slot":398031363}
+2026-02-04T15:45:56.805Z [0m[INFO][0m  [0mMatch check: "NEON" / "Neon Porsche" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:45:58.147Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"HsNYcB75haJTZk5xeMNPpHxVxEM8xbhsGdEKKhM2pump","symbol":"FIRST","name":"COLLATERIZE FOUNDER POSTED IT","slot":398031364}
+2026-02-04T15:45:58.147Z [0m[INFO][0m  [0mMatch check: "FIRST" / "COLLATERIZE FOUNDER POSTED IT" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:45:58.662Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"DyZGRcyrMRAc3N97BspfqsCgEru6Z7T9RyfrNYbWpump","symbol":"FIRST","name":"COLLATERIZE FOUNDER POSTED IT","slot":398031364}
+2026-02-04T15:45:58.662Z [0m[INFO][0m  [0mMatch check: "FIRST" / "COLLATERIZE FOUNDER POSTED IT" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:45:58.999Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"DA3WGfKpufXhw28yDPa8yfn28VDR5pniXH4FDQ2fpump","symbol":"FIRST","name":"COLLATERIZE FOUNDER POSTED IT","slot":398031364}
+2026-02-04T15:45:58.999Z [0m[INFO][0m  [0mMatch check: "FIRST" / "COLLATERIZE FOUNDER POSTED IT" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:46:04.486Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"3ExqGKAe7rEBcjgEV6HTyg2Wat7HPrkTGgvxCSPWpump","symbol":"NICOLE","name":"Epstein Babymama","slot":398031377}
+2026-02-04T15:46:04.486Z [0m[INFO][0m  [0mMatch check: "NICOLE" / "Epstein Babymama" ✓ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"name","match":true}
+2026-02-04T15:46:04.486Z [1;32m[SUCCESS][0m  [1;32m🎯 MATCH FOUND! Processing buy...[0m {"symbol":"NICOLE","mint":"3ExqGKAe7rEBcjgEV6HTyg2Wat7HPrkTGgvxCSPWpump"}
+2026-02-04T15:46:04.586Z [33m[WARN][0m  [33mInsufficient balance for full buy, using all available[0m {"requested":0.1,"available":0.0061848799999999985}
+2026-02-04T15:46:04.735Z [0m[INFO][0m  [0mBuilt buy transaction[0m {"mint":"3ExqGKAe7rEBcjgEV6HTyg2Wat7HPrkTGgvxCSPWpump","amountSol":0.0061848799999999985,"maxSolCost":0.006494122,"priorityFee":5000,"jitoTip":10000}
+2026-02-04T15:46:04.735Z [0m[INFO][0m  [0mDRY RUN: Would buy token[0m {"mint":"3ExqGKAe7rEBcjgEV6HTyg2Wat7HPrkTGgvxCSPWpump","symbol":"NICOLE","amountSol":0.0061848799999999985,"slippageBps":500}
+2026-02-04T15:46:05.692Z [33m[WARN][0m  [33mDRY RUN: Simulation failed[0m {"error":"{\"InstructionError\":[1,\"IncorrectProgramId\"]}"}
+2026-02-04T15:46:08.974Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"3DmMGx8LtPg2QiZbvNh4k34w2XjEjrVvmr5MmH1Zpump","symbol":"miracle","name":"miracle","slot":398031379}
+2026-02-04T15:46:08.974Z [0m[INFO][0m  [0mMatch check: "miracle" / "miracle" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:46:10.720Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"65KTwPsqDE7tvAAbopVoWkaoqcdJSsfkkhejnujmpump","symbol":"CSHARK","name":"CopperShark","slot":398031380}
+2026-02-04T15:46:10.720Z [0m[INFO][0m  [0mMatch check: "CSHARK" / "CopperShark" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:46:11.684Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"So11111111111111111111111111111111111111112","symbol":"UNKNOWN","name":"Unknown Token","slot":398031381}
+2026-02-04T15:46:11.684Z [0m[INFO][0m  [0mMatch check: "UNKNOWN" / "Unknown Token" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:46:12.182Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"CT9bxkN6LtA4MTFXBgKBZpP89FXHMWM34X2Qm1RQkHfM","symbol":"Onada","name":"The Last Trencher","slot":398031382}
+2026-02-04T15:46:12.182Z [0m[INFO][0m  [0mMatch check: "Onada" / "The Last Trencher" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:46:16.927Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"2o2WY9DdXBttqxGcQi4JED6Rc76C63Aucx6TSiJtpump","symbol":"FIRST","name":"COLLATERIZE FOUNDER POSTED IT","slot":398031387}
+2026-02-04T15:46:16.927Z [0m[INFO][0m  [0mMatch check: "FIRST" / "COLLATERIZE FOUNDER POSTED IT" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:46:27.960Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"9uvUHkRDn6YKadHqxXvJcdJAfV9q6bK8hPGuEmebBpVo","symbol":"Not","name":"Fort Not","slot":398031395}
+2026-02-04T15:46:27.960Z [0m[INFO][0m  [0mMatch check: "Not" / "Fort Not" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:46:33.733Z [0m[INFO][0m  [0mShutting down...[0m
+2026-02-04T15:46:33.733Z [0m[INFO][0m  [0mDisconnected from Geyser[0m
