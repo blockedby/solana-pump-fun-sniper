@@ -1,4 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
+import bs58 from 'bs58';
 import {
   isPumpFunCreate,
   extractTokenInfo,
@@ -70,6 +71,23 @@ describe('geyser parser', () => {
           PUMP_FUN_PROGRAM,
           'TokenProgram11111111111111111111111111111',
         ],
+        logs: ['Program log: Instruction: Create'],
+      });
+
+      expect(isPumpFunCreate(tx)).toBe(true);
+    });
+
+    it('should match Pump.fun program when accounts are encoded from raw bytes (like gRPC)', () => {
+      // Simulate what gRPC returns: raw 32-byte public key
+      // Then encode to base58 (what client.ts now does)
+      const rawProgramBytes = PUMP_FUN_PROGRAM_ID.toBytes(); // Uint8Array(32)
+      const encodedAccount = bs58.encode(Buffer.from(rawProgramBytes));
+
+      // Verify encoding matches expected base58
+      expect(encodedAccount).toBe(PUMP_FUN_PROGRAM);
+
+      const tx = createBaseTx({
+        accounts: [encodedAccount],
         logs: ['Program log: Instruction: Create'],
       });
 

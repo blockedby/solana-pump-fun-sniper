@@ -3,6 +3,7 @@ import Client, {
   SubscribeRequest,
   SubscribeUpdate,
 } from '@triton-one/yellowstone-grpc';
+import bs58 from 'bs58';
 import { Config } from '../config';
 import { logger } from '../utils/logger';
 import { TokenInfo } from '../matcher/symbol';
@@ -13,6 +14,7 @@ export type TokenCallback = (token: TokenInfo) => void;
 
 export class GeyserClient {
   private client: Client | null = null;
+  private stream: (ReturnType<Client['subscribe']> extends Promise<infer T> ? T : never) | null = null;
   private config: Pick<Config, 'grpcEndpoint' | 'grpcToken'>;
   private onToken: TokenCallback;
   private lastSlot: number = 0;
@@ -61,30 +63,31 @@ export class GeyserClient {
         ping: undefined,
       };
 
-      const stream = await this.client.subscribe();
+      this.stream = await this.client.subscribe();
 
-      stream.on('data', (update: SubscribeUpdate) => {
+      this.stream.on('data', (update: SubscribeUpdate) => {
         this.handleUpdate(update);
       });
 
-      stream.on('error', (error: Error & { code?: string }) => {
+      this.stream.on('error', (error: Error & { code?: string }) => {
         logger.error('Geyser stream error', { error: error.message, code: error.code });
-        this.handleDisconnect();
+        // Don't call handleDisconnect() here - 'close' will always fire after error
       });
 
-      stream.on('end', () => {
+      this.stream.on('end', () => {
         logger.warn('Geyser stream ended');
-        this.handleDisconnect();
+        // Don't call handleDisconnect() here - 'close' will handle it
       });
 
-      stream.on('close', () => {
+      this.stream.on('close', () => {
         logger.warn('Geyser stream closed');
+        this.stream = null;
         this.handleDisconnect();
       });
 
       // Send subscription request
       await new Promise<void>((resolve, reject) => {
-        stream.write(request, (err: Error | null | undefined) => {
+        this.stream!.write(request, (err: Error | null | undefined) => {
           if (err) reject(err);
           else resolve();
         });
@@ -94,16 +97,16 @@ export class GeyserClient {
       logger.info('Connected to Geyser successfully');
 
       // Setup keepalive ping every 30 seconds
-      this.setupKeepalive(stream);
+      this.setupKeepalive();
     } catch (error) {
       logger.error('Failed to connect to Geyser', { error: String(error) });
       this.handleDisconnect();
     }
   }
 
-  private setupKeepalive(stream: ReturnType<Client['subscribe']> extends Promise<infer T> ? T : never): void {
+  private setupKeepalive(): void {
     this.keepaliveInterval = setInterval(() => {
-      if (!this.isRunning) {
+      if (!this.isRunning || !this.stream) {
         if (this.keepaliveInterval) {
           clearInterval(this.keepaliveInterval);
         }
@@ -111,7 +114,9 @@ export class GeyserClient {
       }
 
       try {
-        stream.write({ ping: { id: Date.now() } }, (err: Error | null | undefined) => {
+        // Use seconds (not ms) to stay within i32 range, modulo for safety
+        const pingId = Math.floor(Date.now() / 1000) % 2147483647;
+        this.stream.write({ ping: { id: pingId } }, (err: Error | null | undefined) => {
           if (err) {
             logger.warn('Keepalive ping failed', { error: err.message });
           }
@@ -151,13 +156,14 @@ export class GeyserClient {
           : 'unknown',
         accounts:
           tx.message?.accountKeys?.map((k) =>
-            Buffer.from(k).toString('base64')
+            bs58.encode(Buffer.from(k))
           ) || [],
         data: Buffer.from(tx.message?.instructions?.[0]?.data || []),
         postTokenBalances:
           meta?.postTokenBalances?.map((b) => ({
-            mint: b.mint || '',
-            owner: b.owner || '',
+            // gRPC may return mint/owner as Uint8Array of ASCII bytes
+            mint: typeof b.mint === 'string' ? b.mint : Buffer.from(b.mint as unknown as Uint8Array).toString('utf8'),
+            owner: typeof b.owner === 'string' ? b.owner : Buffer.from(b.owner as unknown as Uint8Array).toString('utf8'),
           })) || [],
         logs: meta?.logMessages || [],
       };
@@ -219,6 +225,7 @@ export class GeyserClient {
     }
     // Note: yellowstone-grpc Client doesn't expose a close method
     // Setting to null allows garbage collection to clean up the connection
+    this.stream = null;
     this.client = null;
     logger.info('Disconnected from Geyser');
   }

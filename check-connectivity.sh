@@ -27,9 +27,9 @@ NC='\033[0m' # No Color
 # [WS] ams.socket.vali.wtf:80 TCP ... OK (port open)
 
 # Endpoints
-RPC_URL="http://ams.node.vali.wtf/"
-WS_URL="ws://ams.socket.vali.wtf/"
-GRPC_URL="http://ams.grpc.vali.wtf:10000/"
+RPC_URL="http://fra.rpc.urbanaio.com/"
+WS_URL="ws://fra.rpc.urbanaio.com/"
+GRPC_URL="http://fra-geyser.rpc.urbanaio.com:11111/"
 LANDING_URL="http://fast.ams.node.vali.wtf/"
 
 echo "======================================"

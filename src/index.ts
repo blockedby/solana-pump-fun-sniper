@@ -23,7 +23,7 @@ async function handleNewToken(token: TokenInfo, config: Config): Promise<void> {
     return;
   }
 
-  logger.info('MATCH FOUND! Processing buy...', {
+  logger.success('🎯 MATCH FOUND! Processing buy...', {
     symbol: token.symbol,
     mint: token.mint,
   });
