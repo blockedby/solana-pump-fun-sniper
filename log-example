@@ -203,3 +203,7 @@
 2026-02-04T15:45:24.036Z [0m[INFO][0m  [0mMatch check: "FIRST" / "COLLATERIZE FOUNDER POSTED IT" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
 2026-02-04T15:45:25.943Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"5VAMA2Sn5R9qKczqqB4scTTa9dSjqJshj4vfi3nWpump","symbol":"GORA","name":"GORA","slot":398031326}
 2026-02-04T15:45:25.943Z [0m[INFO][0m  [0mMatch check: "GORA" / "GORA" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:45:28.507Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"DgyjhCNbmqiR1XBNiyYZg6RVnKCZjYKxfc8Ueti4XQuL","symbol":"TEST","name":"test coin","slot":398031328}
+2026-02-04T15:45:28.507Z [0m[INFO][0m  [0mMatch check: "TEST" / "test coin" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
+2026-02-04T15:45:35.357Z [0m[INFO][0m  [0mNew token detected[0m {"mint":"AMX27cTEgEVt8e6uXnKKu92HZQjbKJEuMRDjEGpg38jr","symbol":"9A9C","name":"Grok Growing","slot":398031336}
+2026-02-04T15:45:35.357Z [0m[INFO][0m  [0mMatch check: "9A9C" / "Grok Growing" ✗ trump|molt|clawd|pepe|^ep[0m {"mode":"regex","matchedOn":"none","match":false}
